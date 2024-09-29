@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espacio entre las imágenes */
+    padding: 10px;
+}
+
+.gallery img {
+    width: calc(33.33% - 20px); /* Tres imágenes por fila con espacio */
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+    .gallery img {
+        width: calc(50% - 20px); /* Dos imágenes por fila */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        width: 100%; /* Una imagen por fila */
+    }
+}

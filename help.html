@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="help.css">
+    <title>Ayuda al Cliente</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            height: 100vh;
+        }
+
+        /* Estilos para la barra de navegación */
+        nav {
+            width: 100%;
+            background-color: hsl(214, 56%, 58%);;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+        }
+
+        .menu-btn span {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Estilos para el menú en pantalla completa */
+        .full-screen-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: left 0.3s ease;
+        }
+
+        .full-screen-menu ul {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .full-screen-menu ul li a {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Media Query para pantallas móviles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+        }
+
+        /* Estilo para abrir el menú */
+        .full-screen-menu.open {
+            left: 0;
+        }
+    </style>
+</head>
+ <!-- Barra de navegación -->
+ <nav>
+    <div class="logo">CULTURE TRUX</div>
+    <div class="menu-btn" id="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="nosotros.html">NOSOTROS</a></li>
+        <li><a href="galeria.html">GALERÍA</a></li>
+
+    </ul>
+</nav>
+
+<!-- Menú de pantalla completa para dispositivos móviles -->
+<div class="full-screen-menu" id="full-screen-menu">
+    <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="nosotros.html">NOSOTROS</a></li>
+        <li><a href="galeria.html">GALERÍA</a></li>
+    </ul>
+</div>
+
+<!-- Contenido principal -->
+
+
+<!-- JavaScript para controlar la hamburguesa y el menú -->
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const fullScreenMenu = document.getElementById('full-screen-menu');
+
+    // Al hacer clic en el botón de hamburguesa
+    menuBtn.addEventListener('click', () => {
+        fullScreenMenu.classList.toggle('open');
+    });
+
+    // Cerrar el menú al hacer clic en un enlace (opcional)
+    document.querySelectorAll('.full-screen-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            fullScreenMenu.classList.remove('open');
+        });
+    });
+</script>
+
+
+    <main>
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form>
+                <label for="nombre">Nombres y Apellidos :</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <ul>
+                <li><strong>¿Cómo puedo restablecer mi contraseña?</strong>
+                    <p>Visita la sección de 'Olvidé mi contraseña' en la página de inicio de sesión.</p>
+                </li>
+                <li><strong>¿Cuáles son los métodos de pago aceptados?</strong>
+                    <p>Aceptamos tarjetas de crédito, débito y PayPal.</p>
+                </li>
+                <li><strong>¿Dónde puedo encontrar mis pedidos anteriores?</strong>
+                    <p>Inicia sesión en tu cuenta y dirígete a 'Mis Pedidos'.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;  2024 CULTURE TRUX Copyright . Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

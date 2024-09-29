@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gale.css">
+    <title>Galería Responsiva</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            height: 100vh;
+        }
+
+        /* Estilos para la barra de navegación */
+        nav {
+            width: 100%;
+            background-color: hsl(214, 56%, 58%);;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+        }
+
+        .menu-btn span {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Estilos para el menú en pantalla completa */
+        .full-screen-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: left 0.3s ease;
+        }
+
+        .full-screen-menu ul {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .full-screen-menu ul li a {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Media Query para pantallas móviles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+        }
+
+        /* Estilo para abrir el menú */
+        .full-screen-menu.open {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="logo">CULTURE TRUX</div>
+        <div class="menu-btn" id="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="nosotros.html">NOSOTROS</a></li>
+            <li><a href="help.html">AYUDA</a></li>
+        </ul>
+    </nav>
+
+    <!-- Menú de pantalla completa para dispositivos móviles -->
+    <div class="full-screen-menu" id="full-screen-menu">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="#">NOSOTROS</a></li>
+            <li><a href="help.html">AYUDA</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+
+
+    <!-- JavaScript para controlar la hamburguesa y el menú -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const fullScreenMenu = document.getElementById('full-screen-menu');
+
+        // Al hacer clic en el botón de hamburguesa
+        menuBtn.addEventListener('click', () => {
+            fullScreenMenu.classList.toggle('open');
+        });
+
+        // Cerrar el menú al hacer clic en un enlace (opcional)
+        document.querySelectorAll('.full-screen-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                fullScreenMenu.classList.remove('open');
+            });
+        });
+    </script>
+    
+    <div class="gallery">
+        <!-- Reemplaza 'imagenX.jpg' con las rutas de tus imágenes -->
+        <img src="images/1.jpg" alt="Imagen 1">
+        <img src="images/2.jpg" alt="Imagen 2">
+        <img src="images/3.jpg" alt="Imagen 3">
+        <img src="images/4.jpg" alt="Imagen 4">
+        <img src="images/5.jpg" alt="Imagen 5">
+        <img src="images/6.jpg" alt="Imagen 6">
+        <img src="images/7.jpg" alt="Imagen 7">
+        <img src="images/8.jpg" alt="Imagen 8">
+        <img src="images/9.jpg" alt="Imagen 9">
+        <img src="images/10.jpg" alt="Imagen 10">
+        <img src="images/11.jpg" alt="Imagen 11">
+        <img src="images/12.jpg" alt="Imagen 12">
+        <img src="images/13.jpg" alt="Imagen 13">
+        <img src="images/14.avif" alt="Imagen 14">
+        <img src="images/15.jpg" alt="Imagen 15">
+        <img src="images/16.jpg" alt="Imagen 16">
+        <img src="images/17.jpg" alt="Imagen 17">
+        <img src="images/18.jpg" alt="Imagen 18">
+        <img src="images/19.jpg" alt="Imagen 19">
+        <img src="images/20.jpg" alt="Imagen 20">
+        <img src="images/21.avif" alt="Imagen 21">
+        <img src="images/22.jpg" alt="Imagen 22">
+        <img src="images/23.jpg" alt="Imagen 23">
+        <img src="images/24.jpg" alt="Imagen 24">
+        <img src="imagen25.jpg" alt="Imagen 25">
+        <img src="imagen26.jpg" alt="Imagen 26">
+        <img src="imagen27.jpg" alt="Imagen 27">
+        <img src="imagen28.jpg" alt="Imagen 28">
+        <img src="imagen29.jpg" alt="Imagen 29">
+        <img src="imagen30.jpg" alt="Imagen 30">
+
+        
+    </div>
+</body>
+</html>
